@@ -9,14 +9,20 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
   title = 'innovatiedag-angular';
-  version = "unknown";
+  summary = "";
+  temperature: 0;
 
   constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit() {
+    this.refreshWeatherInfo();
+  }
+
+  refreshWeatherInfo() {
     this.httpClient.get(environment.apiUrl).subscribe((response : any) => {
-      this.version = response.version;
+      this.summary = response.summary;
+      this.temperature = response.temperatureC;
     });
   }
 }
