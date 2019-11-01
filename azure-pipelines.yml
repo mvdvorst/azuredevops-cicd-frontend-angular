@@ -24,7 +24,7 @@ steps:
 - task: AzureFileCopy@3
   inputs:
     SourcePath: '$(build.sourcesDirectory)/dist/innovatiedag-angular'
-    azureSubscription: innovatiedagangular
+    azureSubscription: 'Betalen naar gebruik(231ba11f-b167-49ce-bd39-3e76b4f324f8)'
     Destination: 'AzureBlob'
-    storage:
+    storage: 'innovatiedagangular'
     ContainerName: '$web'
