@@ -23,7 +23,7 @@ steps:
   displayName: 'npm install and build'
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: '$(Build.SourcesDirectory)/dist'
+    SourcePath: '$(Build.SourcesDirectory)/dist/innovatiedag-angular/'
     azureSubscription: 'Betalen naar gebruik(231ba11f-b167-49ce-bd39-3e76b4f324f8)'
     Destination: 'AzureBlob'
     storage: 'innovatiedagangular'
