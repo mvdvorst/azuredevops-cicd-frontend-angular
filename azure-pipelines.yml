@@ -18,10 +18,16 @@ steps:
 
 - script: |
     npm install -g @angular/cli
+  displayName: 'npm install angular'
+
+- script: |
     npm install
-    ng build --prod
-  displayName: 'npm install and build'
+  displayName: 'npm install'
   
+- script: |
+    ng build --prod
+  displayName: 'ng build'
+
 - script: |
     dir
   displayName: 'list cwd contents (verify build)'
